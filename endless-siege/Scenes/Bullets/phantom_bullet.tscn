@@ -1,11 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://dkfpf7jjgw0n1"]
+[gd_scene load_steps=5 format=3 uid="uid://d2fu3xbpenicn"]
 
 [ext_resource type="Script" uid="uid://bhf7h2sf2eekr" path="res://Scripts/Bullets/PhantomBullet.gd" id="1_7hhbn"]
+[ext_resource type="Texture2D" uid="uid://dj4ws4bx8r1dn" path="res://Assets/Bullets 1-Sheet.png" id="2_y0ghn"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_y0ghn"]
 light_mode = 1
-
-[sub_resource type="CanvasTexture" id="CanvasTexture_wctq8"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_bkjyb"]
 radius = 1.0
@@ -15,10 +14,12 @@ height = 6.0
 script = ExtResource("1_7hhbn")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-self_modulate = Color(2, 3, 4, 1)
+self_modulate = Color(4, 6, 8, 1)
 material = SubResource("CanvasItemMaterial_y0ghn")
 scale = Vector2(4, 2)
-texture = SubResource("CanvasTexture_wctq8")
+texture = ExtResource("2_y0ghn")
+hframes = 9
+frame = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 rotation = 1.5708

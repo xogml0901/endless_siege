@@ -5,7 +5,7 @@ var damage: int = 0
 var shot_effects: Array[ShotEffect]
 var current_penetration_count: int = 0
 
-@export var speed: float = 500
+@export var speed: float = 400
 @export var can_penetrate: bool = false
 @export var max_penetration_count: int
 
