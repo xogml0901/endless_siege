@@ -1,0 +1,110 @@
+[gd_scene load_steps=18 format=3 uid="uid://yfmv78fn84d8"]
+
+[ext_resource type="Script" uid="uid://d4feanreabm81" path="res://addons/gaea/nodes/generator.gd" id="1_203el"]
+[ext_resource type="Script" uid="uid://3qsmwhn2sk47" path="res://addons/gaea/resources/gaea_layer.gd" id="2_t83ds"]
+[ext_resource type="Script" uid="uid://brb1clh2y2bv0" path="res://addons/gaea/graph/nodes/node_resource.gd" id="3_34b4t"]
+[ext_resource type="Resource" uid="uid://bbkdvyxkj2slo" path="res://addons/gaea/graph/nodes/output_node_resource.tres" id="4_2i2of"]
+[ext_resource type="Script" uid="uid://bh3sajxnmp14w" path="res://addons/gaea/graph/nodes/node_argument.gd" id="5_6tvcj"]
+[ext_resource type="Script" uid="uid://ote622wl6axc" path="res://addons/gaea/graph/nodes/node_slot.gd" id="6_4qg0q"]
+[ext_resource type="Script" uid="uid://bdwxrdlr0267t" path="res://addons/gaea/graph/nodes/root/map/mappers/flags_mapper.gd" id="7_tr666"]
+[ext_resource type="Script" uid="uid://dae6umbqb872e" path="res://addons/gaea/resources/gaea_data.gd" id="8_eoyr6"]
+
+[sub_resource type="Resource" id="Resource_x01mf"]
+script = ExtResource("2_t83ds")
+enabled = true
+metadata/_custom_type_script = "uid://3qsmwhn2sk47"
+
+[sub_resource type="Resource" id="Resource_ds3wq"]
+script = ExtResource("5_6tvcj")
+type = 9
+name = &"match_all"
+default_value = true
+hint = Dictionary[String, Variant]({})
+metadata/_custom_type_script = "uid://bh3sajxnmp14w"
+
+[sub_resource type="Resource" id="Resource_jc4ok"]
+script = ExtResource("5_6tvcj")
+type = 8
+name = &"match_flags"
+default_value = null
+hint = Dictionary[String, Variant]({})
+
+[sub_resource type="Resource" id="Resource_4cqhj"]
+script = ExtResource("5_6tvcj")
+type = 8
+name = &"exclude_flags"
+default_value = null
+hint = Dictionary[String, Variant]({})
+metadata/_custom_type_script = "uid://bh3sajxnmp14w"
+
+[sub_resource type="Resource" id="Resource_fkjhn"]
+script = ExtResource("6_4qg0q")
+left_enabled = true
+left_type = 0
+left_label = "Data"
+right_enabled = false
+right_type = 0
+right_label = ""
+right_show_preview = false
+
+[sub_resource type="Resource" id="Resource_oucor"]
+script = ExtResource("6_4qg0q")
+left_enabled = true
+left_type = 2
+left_label = "Material"
+right_enabled = false
+right_type = 0
+right_label = ""
+right_show_preview = false
+
+[sub_resource type="Resource" id="Resource_ksfsh"]
+script = ExtResource("6_4qg0q")
+left_enabled = false
+left_type = 0
+left_label = ""
+right_enabled = true
+right_type = 1
+right_label = "Map"
+right_show_preview = false
+
+[sub_resource type="Resource" id="Resource_ocu3a"]
+script = ExtResource("7_tr666")
+input_slots = Array[ExtResource("6_4qg0q")]([SubResource("Resource_fkjhn"), SubResource("Resource_oucor")])
+args = Array[ExtResource("5_6tvcj")]([SubResource("Resource_ds3wq"), SubResource("Resource_jc4ok"), SubResource("Resource_4cqhj")])
+output_slots = Array[ExtResource("6_4qg0q")]([SubResource("Resource_ksfsh")])
+title = "FlagsMapper"
+description = "Outputs a map.
+For every cell that matches the flags in [param]mask[/bg][/c], sets that cell to [param]material[/bg][/c]."
+is_output = false
+data = {
+&"exclude_flags": Array[int]([]),
+&"match_all": true,
+&"match_flags": Array[int]([])
+}
+
+[sub_resource type="Resource" id="Resource_oqkf0"]
+script = ExtResource("8_eoyr6")
+layers = Array[ExtResource("2_t83ds")]([SubResource("Resource_x01mf")])
+connections = Array[Dictionary]([])
+resources = Array[ExtResource("3_34b4t")]([ExtResource("4_2i2of"), SubResource("Resource_ocu3a")])
+node_data = Array[Dictionary]([{
+"name": &"BaseNode",
+"position": Vector2(0, 0)
+}, {
+"name": &"@GraphNode@27299",
+"position": Vector2(525.622, -61.0866)
+}])
+parameters = Dictionary[StringName, Variant]({})
+scroll_offset = Vector2(0, 0)
+other = {
+"scroll_offset": Vector2(-376.397, -59.3063)
+}
+metadata/_custom_type_script = "uid://dae6umbqb872e"
+
+[node name="Dungeon" type="Node2D"]
+
+[node name="GaeaGenerator" type="Node" parent="."]
+script = ExtResource("1_203el")
+data = SubResource("Resource_oqkf0")
+seed = 1253151797
+metadata/_custom_type_script = "uid://d4feanreabm81"

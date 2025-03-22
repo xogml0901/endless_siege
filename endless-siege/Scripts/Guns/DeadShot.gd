@@ -7,7 +7,6 @@ func _init():
 	reload_time = 1.3
 	max_ammo = 3
 	fire_rate = 0.2
-	bullet_scene = preload("uid://53con7s8llvv")
 	rebound_force = 10
 
 func apply_shot_effect_to_bullet(bullet: Bullet):

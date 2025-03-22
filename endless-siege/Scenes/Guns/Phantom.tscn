@@ -2,10 +2,12 @@
 
 [ext_resource type="Script" uid="uid://25jyx0s5v6y4" path="res://Scripts/Guns/Phantom.gd" id="1_56w52"]
 [ext_resource type="Texture2D" uid="uid://cf1ro2cxjbo7w" path="res://Assets/vintorez.png" id="2_56w52"]
-[ext_resource type="PackedScene" uid="uid://dicybqw75f8ax" path="res://Scenes/Bullets/phantom_bullet.tscn" id="2_p4b20"]
 [ext_resource type="Shader" uid="uid://cjjd1hqp5t442" path="res://outline.gdshader" id="3_p4b20"]
 [ext_resource type="Script" uid="uid://cxakt007x6ham" path="res://Scripts/Interaction/InteractionArea.gd" id="4_q2bjc"]
 [ext_resource type="PackedScene" uid="uid://jrwaj0xmqtol" path="res://particles/shot_particle.tscn" id="5_hdwiw"]
+
+[sub_resource type="Resource" id="Resource_xgaug"]
+metadata/__load_path__ = "res://Scenes/Bullets/phantom_bullet.tscn"
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_p3b1u"]
 resource_local_to_scene = true
@@ -31,7 +33,7 @@ script = ExtResource("1_56w52")
 gun_name = "Phantom"
 gun_desc = "Phantom"
 max_ammo = 3
-bullet_scene = ExtResource("2_p4b20")
+bullet_scene = SubResource("Resource_xgaug")
 fire_rate = 0.2
 reload_time = 0.8
 gun_icon = ExtResource("2_56w52")

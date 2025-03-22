@@ -1,11 +1,10 @@
-[gd_scene load_steps=12 format=4 uid="uid://kfwfxbg81xut"]
+[gd_scene load_steps=11 format=4 uid="uid://dk628ffkcxl0x"]
 
 [ext_resource type="Texture2D" uid="uid://dhpi1uyortffg" path="res://Assets/Tiles/RF_Catacombs_v1.0/mainlevbuild.png" id="1_s5280"]
 [ext_resource type="PackedScene" uid="uid://cka07ytdwr5k" path="res://Scenes/Player.tscn" id="2_glmor"]
 [ext_resource type="Texture2D" uid="uid://d1dv7dklc4xid" path="res://Assets/Tiles/RF_Catacombs_v1.0/decorative.png" id="2_gtq00"]
 [ext_resource type="PackedScene" uid="uid://yvofh8if7610" path="res://Scenes/test_enemy.tscn" id="4_m6d4h"]
 [ext_resource type="PackedScene" uid="uid://dpdf2p77widk2" path="res://Scenes/Guns/Phantom.tscn" id="6_m46ed"]
-[ext_resource type="PackedScene" uid="uid://dpdf2p77widk2" path="res://Scenes/Guns/Phantom.tscn" id="7_evwmt"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_uki5e"]
 texture = ExtResource("1_s5280")
@@ -2230,7 +2229,7 @@ position = Vector2(157, -48)
 [node name="test1_Gun" parent="." instance=ExtResource("6_m46ed")]
 position = Vector2(71, -47)
 
-[node name="Base_Gun" parent="." instance=ExtResource("7_evwmt")]
+[node name="Base_Gun" parent="." instance=ExtResource("6_m46ed")]
 position = Vector2(108, -48)
 
 [node name="test1_Gun2" parent="." instance=ExtResource("6_m46ed")]
