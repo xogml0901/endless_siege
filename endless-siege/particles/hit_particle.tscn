@@ -1,0 +1,36 @@
+[gd_scene load_steps=5 format=3 uid="uid://bdjaxik1cwfxc"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_ktumy"]
+light_mode = 1
+
+[sub_resource type="Gradient" id="Gradient_bs22l"]
+offsets = PackedFloat32Array(0, 0.541667, 1)
+colors = PackedColorArray(6.629, 0, 0.013, 1, 8.839, 0.051, 0.029, 0.569, 8.287, 0.051, 0.029, 0.099)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_5b80j"]
+gradient = SubResource("Gradient_bs22l")
+use_hdr = true
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_bs22l"]
+particle_flag_disable_z = true
+emission_shape = 1
+emission_sphere_radius = 25.0
+direction = Vector3(0, 0, 0)
+spread = 180.0
+initial_velocity_min = 120.0
+initial_velocity_max = 220.0
+gravity = Vector3(0, 0, 0)
+damping_min = 100.0
+damping_max = 300.0
+scale_min = 0.5
+scale_max = 2.0
+color_ramp = SubResource("GradientTexture1D_5b80j")
+
+[node name="HitParticle" type="GPUParticles2D"]
+material = SubResource("CanvasItemMaterial_ktumy")
+emitting = false
+amount = 12
+lifetime = 0.25
+one_shot = true
+explosiveness = 1.0
+process_material = SubResource("ParticleProcessMaterial_bs22l")

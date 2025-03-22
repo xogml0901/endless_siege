@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://bcsttmeabd84b"]
+
+[ext_resource type="Script" uid="uid://8v530048tgb6" path="res://Scripts/AmmoBarManager.gd" id="1_5vmue"]
+
+[node name="AmmosUI" type="HFlowContainer"]
+offset_left = 76.0
+offset_top = 301.0
+offset_right = 184.0
+offset_bottom = 341.0
+theme_override_constants/h_separation = 3
+theme_override_constants/v_separation = 3
+reverse_fill = true
+script = ExtResource("1_5vmue")

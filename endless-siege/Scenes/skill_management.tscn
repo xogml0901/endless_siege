@@ -1,0 +1,185 @@
+[gd_scene load_steps=9 format=3 uid="uid://dp3yud8xyep2b"]
+
+[ext_resource type="FontFile" uid="uid://b7um4skpucnci" path="res://Fonts/Freesentation-7Bold.ttf" id="1_id7lo"]
+[ext_resource type="Texture2D" uid="uid://clj8qiyg85u70" path="res://Assets/Skill Icon/36.png" id="2_hh1kd"]
+[ext_resource type="Texture2D" uid="uid://8vpkcm12vben" path="res://Assets/Skill Icon/163.png" id="3_dw4mr"]
+[ext_resource type="Texture2D" uid="uid://ch1lbqyrvs13w" path="res://Assets/Skill Icon/76.png" id="4_i48tp"]
+[ext_resource type="Texture2D" uid="uid://dlrl0ho15r2uu" path="res://Assets/Skill Icon/238.png" id="5_jus0o"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qiqoy"]
+bg_color = Color(0.0492469, 0.0079855, 7.52043e-10, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.735212, 0.304293, 3.85046e-07, 1)
+corner_detail = 6
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_w4dp1"]
+color = Color(0.733333, 0.305882, 0, 1)
+grow_begin = 0.0
+grow_end = 0.0
+thickness = 2
+
+[sub_resource type="LabelSettings" id="LabelSettings_iw0j6"]
+font = ExtResource("1_id7lo")
+font_size = 14
+
+[node name="Skill Management" type="CanvasLayer"]
+
+[node name="Panel" type="Panel" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -156.0
+offset_top = -125.0
+offset_right = -2.0
+offset_bottom = 125.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_qiqoy")
+
+[node name="Title_Line" type="Panel" parent="Panel"]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 31.0
+offset_right = 141.0
+offset_bottom = 71.0
+theme_override_styles/panel = SubResource("StyleBoxLine_w4dp1")
+
+[node name="Title_Label" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = -51.0
+offset_top = 3.0
+offset_right = 201.0
+offset_bottom = 32.0
+text = "All Skills"
+label_settings = SubResource("LabelSettings_iw0j6")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Panel"]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 42.0
+offset_right = 141.0
+offset_bottom = 235.0
+
+[node name="GridContainer" type="GridContainer" parent="Panel/ScrollContainer"]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+columns = 4
+
+[node name="Button" type="Button" parent="Panel/ScrollContainer/GridContainer"]
+custom_minimum_size = Vector2(28, 28)
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="Panel/ScrollContainer/GridContainer/Button"]
+layout_mode = 0
+offset_right = 28.0
+offset_bottom = 28.0
+texture = ExtResource("2_hh1kd")
+expand_mode = 1
+
+[node name="Button2" type="Button" parent="Panel/ScrollContainer/GridContainer"]
+custom_minimum_size = Vector2(28, 28)
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="Panel/ScrollContainer/GridContainer/Button2"]
+layout_mode = 0
+offset_right = 28.0
+offset_bottom = 28.0
+texture = ExtResource("3_dw4mr")
+expand_mode = 1
+
+[node name="Button3" type="Button" parent="Panel/ScrollContainer/GridContainer"]
+custom_minimum_size = Vector2(28, 28)
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="Panel/ScrollContainer/GridContainer/Button3"]
+layout_mode = 0
+offset_right = 28.0
+offset_bottom = 28.0
+texture = ExtResource("4_i48tp")
+expand_mode = 1
+
+[node name="Button4" type="Button" parent="Panel/ScrollContainer/GridContainer"]
+custom_minimum_size = Vector2(28, 28)
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="Panel/ScrollContainer/GridContainer/Button4"]
+layout_mode = 0
+offset_right = 28.0
+offset_bottom = 28.0
+texture = ExtResource("5_jus0o")
+expand_mode = 1
+
+[node name="Panel2" type="Panel" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 4.0
+offset_top = -125.0
+offset_right = 158.0
+offset_bottom = -4.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_qiqoy")
+
+[node name="Title_Line" type="Panel" parent="Panel2"]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 31.0
+offset_right = 141.0
+offset_bottom = 71.0
+theme_override_styles/panel = SubResource("StyleBoxLine_w4dp1")
+
+[node name="Title_Label" type="Label" parent="Panel2"]
+layout_mode = 0
+offset_left = -51.0
+offset_top = 3.0
+offset_right = 201.0
+offset_bottom = 32.0
+text = "Equipped Skills"
+label_settings = SubResource("LabelSettings_iw0j6")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Panel3" type="Panel" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 4.0
+offset_top = 3.5
+offset_right = 158.0
+offset_bottom = 124.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_qiqoy")
+
+[node name="Title_Line" type="Panel" parent="Panel3"]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 31.0
+offset_right = 141.0
+offset_bottom = 71.0
+theme_override_styles/panel = SubResource("StyleBoxLine_w4dp1")
+
+[node name="Title_Label" type="Label" parent="Panel3"]
+layout_mode = 0
+offset_left = -51.0
+offset_top = 3.0
+offset_right = 201.0
+offset_bottom = 32.0
+text = "Skill Details"
+label_settings = SubResource("LabelSettings_iw0j6")
+horizontal_alignment = 1
+vertical_alignment = 1

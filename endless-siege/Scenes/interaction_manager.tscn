@@ -1,0 +1,45 @@
+[gd_scene load_steps=5 format=3 uid="uid://cfucnx3x5j005"]
+
+[ext_resource type="Script" uid="uid://cb4bba1g43ode" path="res://Scripts/Interaction/InteractionManager.gd" id="1_hvq87"]
+[ext_resource type="FontFile" uid="uid://b7um4skpucnci" path="res://Fonts/Freesentation-7Bold.ttf" id="2_5sait"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6ijyr"]
+radius = 18.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_rqncv"]
+line_spacing = 6.0
+font = ExtResource("2_5sait")
+font_size = 8
+outline_size = 2
+outline_color = Color(0, 0, 0, 1)
+
+[node name="InteractionManager" type="Node2D"]
+script = ExtResource("1_hvq87")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_6ijyr")
+
+[node name="Label" type="Label" parent="."]
+z_index = 20
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -43.0
+offset_right = 43.0
+offset_bottom = 23.0
+grow_horizontal = 2
+pivot_offset = Vector2(43, 0)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("2_5sait")
+theme_override_font_sizes/font_size = 12
+text = "Interaction"
+label_settings = SubResource("LabelSettings_rqncv")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_interact_range_area_entered"]
+[connection signal="area_exited" from="Area2D" to="." method="_on_interact_range_area_exited"]

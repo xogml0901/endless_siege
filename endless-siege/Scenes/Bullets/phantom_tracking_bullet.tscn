@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://dduvjmguptjde"]
+
+[ext_resource type="Script" uid="uid://bjve015eajp1l" path="res://Scripts/Bullets/PhantomTrackingBullet.gd" id="1_qrjpo"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_7hhbn"]
+light_mode = 1
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_ysccv"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ysccv"]
+radius = 1.0
+height = 6.0
+
+[node name="Phantom_Tracking_Bullet" type="Area2D"]
+script = ExtResource("1_qrjpo")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+self_modulate = Color(1, 1.5, 2, 1)
+material = SubResource("CanvasItemMaterial_7hhbn")
+scale = Vector2(4, 2)
+texture = SubResource("CanvasTexture_ysccv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_ysccv")
+debug_color = Color(0, 0.6, 0.7, 0)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

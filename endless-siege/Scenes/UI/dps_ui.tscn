@@ -1,0 +1,39 @@
+[gd_scene load_steps=3 format=3 uid="uid://dx3vphuf1qm23"]
+
+[ext_resource type="Script" uid="uid://bo2vf72q2rsxt" path="res://Scripts/DPSManager.gd" id="1_liu8c"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_q3mpa"]
+font_size = 8
+outline_size = 3
+outline_color = Color(0, 0, 0, 1)
+
+[node name="DPS_UI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_liu8c")
+
+[node name="dmg_label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 553.0
+offset_top = 343.0
+offset_right = 636.0
+offset_bottom = 356.0
+text = "DPS : 0"
+label_settings = SubResource("LabelSettings_q3mpa")
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="time_label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 553.0
+offset_top = 328.0
+offset_right = 636.0
+offset_bottom = 341.0
+text = "Time : 0s"
+label_settings = SubResource("LabelSettings_q3mpa")
+horizontal_alignment = 2
+vertical_alignment = 1

@@ -1,0 +1,90 @@
+[gd_scene load_steps=6 format=3 uid="uid://bkhifse31o6cs"]
+
+[ext_resource type="Script" uid="uid://8rjxcq8gtpm5" path="res://Scripts/StatusUI.gd" id="1_fsla4"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4tp54"]
+bg_color = Color(0.140447, 0.140448, 0.140447, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fsla4"]
+bg_color = Color(0.235866, 0.371135, 0.0972639, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g66ud"]
+bg_color = Color(0.141176, 0.141176, 0.141176, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jqcwh"]
+bg_color = Color(0.141176, 0.141176, 0.141176, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+
+[node name="StatusUI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1.0
+offset_top = -2.0
+offset_right = 1.0
+offset_bottom = -2.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_fsla4")
+
+[node name="HPBar" type="ProgressBar" parent="."]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 346.0
+offset_right = 184.0
+offset_bottom = 355.0
+theme_override_styles/background = SubResource("StyleBoxFlat_4tp54")
+theme_override_styles/fill = SubResource("StyleBoxFlat_fsla4")
+value = 30.0
+show_percentage = false
+
+[node name="MainGunPanel" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 309.0
+offset_right = 41.0
+offset_bottom = 342.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_g66ud")
+
+[node name="MainGunTexture" type="TextureRect" parent="MainGunPanel"]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 3.0
+offset_right = 30.0
+offset_bottom = 30.0
+expand_mode = 1
+
+[node name="SubGunPanel" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 45.0
+offset_top = 315.0
+offset_right = 72.0
+offset_bottom = 342.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_jqcwh")
+
+[node name="SubGunTexture" type="TextureRect" parent="SubGunPanel"]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 3.0
+offset_right = 24.0
+offset_bottom = 24.0
+expand_mode = 1
