@@ -2,12 +2,10 @@
 
 [ext_resource type="Script" uid="uid://25jyx0s5v6y4" path="res://Scripts/Guns/Phantom.gd" id="1_56w52"]
 [ext_resource type="Texture2D" uid="uid://cf1ro2cxjbo7w" path="res://Assets/vintorez.png" id="2_56w52"]
+[ext_resource type="PackedScene" uid="uid://dkfpf7jjgw0n1" path="res://Scenes/Bullets/phantom_bullet.tscn" id="2_p4b20"]
 [ext_resource type="Shader" uid="uid://cjjd1hqp5t442" path="res://outline.gdshader" id="3_p4b20"]
 [ext_resource type="Script" uid="uid://cxakt007x6ham" path="res://Scripts/Interaction/InteractionArea.gd" id="4_q2bjc"]
 [ext_resource type="PackedScene" uid="uid://jrwaj0xmqtol" path="res://particles/shot_particle.tscn" id="5_hdwiw"]
-
-[sub_resource type="Resource" id="Resource_xgaug"]
-metadata/__load_path__ = "res://Scenes/Bullets/phantom_bullet.tscn"
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_p3b1u"]
 resource_local_to_scene = true
@@ -21,10 +19,9 @@ shader_parameter/number_of_images = Vector2(1, 1)
 shader_parameter/onoff = 0.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_p3b1u"]
-radius = 14.4
 
 [sub_resource type="LabelSettings" id="LabelSettings_56w52"]
-font_size = 8
+font_size = 6
 outline_size = 3
 outline_color = Color(0, 0, 0, 1)
 
@@ -33,20 +30,19 @@ script = ExtResource("1_56w52")
 gun_name = "Phantom"
 gun_desc = "Phantom"
 max_ammo = 3
-bullet_scene = SubResource("Resource_xgaug")
+bullet_scene = ExtResource("2_p4b20")
 fire_rate = 0.2
 reload_time = 0.8
 gun_icon = ExtResource("2_56w52")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 material = SubResource("ShaderMaterial_p3b1u")
-position = Vector2(2.98023e-08, 1.19209e-07)
-scale = Vector2(0.18, 0.18)
+scale = Vector2(0.12, 0.12)
 texture = ExtResource("2_56w52")
-offset = Vector2(140, 0)
+offset = Vector2(125.664, 0)
 
 [node name="Marker2D" type="Marker2D" parent="."]
-position = Vector2(39, -1)
+position = Vector2(31, -1)
 
 [node name="Interaction" type="Area2D" parent="." node_paths=PackedStringArray("text_point")]
 collision_layer = 2
@@ -56,7 +52,7 @@ text_point = NodePath("TextPoint")
 metadata/_custom_type_script = "uid://cxakt007x6ham"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interaction"]
-position = Vector2(25, 0)
+position = Vector2(15, 0)
 shape = SubResource("CircleShape2D_p3b1u")
 debug_color = Color(0, 0.6, 0.701961, 0.105882)
 
@@ -65,13 +61,13 @@ position = Vector2(8, -9)
 
 [node name="FireParticle" parent="." instance=ExtResource("5_hdwiw")]
 self_modulate = Color(1, 1.5, 2, 1)
-position = Vector2(39, -1)
+position = Vector2(31, -1)
 
 [node name="TrackingStackLabel" type="Label" parent="."]
-offset_left = 21.0
-offset_top = -23.0
-offset_right = 31.0
-offset_bottom = -11.0
+offset_left = 10.0
+offset_top = -18.0
+offset_right = 20.0
+offset_bottom = -6.0
 text = "0"
 label_settings = SubResource("LabelSettings_56w52")
 horizontal_alignment = 1

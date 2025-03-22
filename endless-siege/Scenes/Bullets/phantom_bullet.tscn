@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://dkfpf7jjgw0n1"]
+
+[ext_resource type="Script" uid="uid://bhf7h2sf2eekr" path="res://Scripts/Bullets/PhantomBullet.gd" id="1_7hhbn"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_y0ghn"]
+light_mode = 1
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_wctq8"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_bkjyb"]
+radius = 1.0
+height = 6.0
+
+[node name="PhantomBullet" type="Area2D"]
+script = ExtResource("1_7hhbn")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+self_modulate = Color(2, 3, 4, 1)
+material = SubResource("CanvasItemMaterial_y0ghn")
+scale = Vector2(4, 2)
+texture = SubResource("CanvasTexture_wctq8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_bkjyb")
+debug_color = Color(0, 0.6, 0.7, 0)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

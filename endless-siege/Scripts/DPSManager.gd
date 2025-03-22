@@ -37,6 +37,7 @@ func _process(delta: float) -> void:
 	if current_reset_time >= reset_time:
 		on_meter = false
 		total_time = 1.0
+		total_dmg = 0
 		current_reset_time = 0.0
 		dps_label.text = "DPS : 0"
 		time_label.text = "Time : 0s"

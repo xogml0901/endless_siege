@@ -7,7 +7,7 @@ var tracking_stack: int
 @onready var tracking_bullet: PackedScene = preload("uid://dduvjmguptjde")
 @onready var tracking_stack_label: Label = $TrackingStackLabel
 
-var probability_add_tracking_stack: float = 0.2
+var probability_add_tracking_stack: float = 0.5
 
 func on_fire():
 	shot_stack += 1
